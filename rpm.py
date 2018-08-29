@@ -1,6 +1,8 @@
 #Aqui é declarado a função a ser resolvida
 def func (x):
-    f = 1/x
+    from math import exp, pow
+    #f = 1/x
+    f = float((pow(x,2))*exp(-x))
     return f
 #Aqui é onde acontece tudo, "a" e "b" são os intervalos definidos e "n" é o número de divisões
 def integral(a, b, n):
@@ -15,16 +17,17 @@ def integral(a, b, n):
     #"soma" será a variável responsável pelo somatório de todos os pontos médios na f(x)
     #"func(pm1)" indica que o valor recebido por "soma" já é o resultado do calculo do "pm1" na função
     soma = func(pm1)
-    #Aqui "i" é incializado em 1 por causa desse "1" antes do "n" em "range(1,n)"
+    #Aqui "i" é incializado em 1 
     for i in range(1, n):
         #Aqui é adicionado na lista os pontos médios
+        #Ponto anterior mais o valor de dx
         lista.append(lista[i-1]+dx)
         #Aqui é adicionado na soma os valores dos pontos seguintes aplicados na função definida
         soma +=func(lista[i])
     #"result" recebe a multiplicação de delta x com a soma de todos os pontos médios já aplicados na função
     result = dx*soma
     #Enfeites de impressão
-    print("lista =", lista)
-    print("soma =", soma)
+    #print("lista =", lista)
+    #print("soma =", soma)
     print("resultado =", result)
-integral(1, 2, 5)
+integral(0, 1000, 100000)
