@@ -1,8 +1,13 @@
 #Aqui é declarado a função a ser resolvida
 def func (x):
-    from math import exp, pow
+    from math import exp, sqrt, sin
     #f = 1/x
-    f = float((pow(x,2))*exp(-x))
+    #f = pow(x,4)
+    #f = 1/(x+1)
+    #f = sqrt(1+pow(x,2))
+    #f = sin(x)
+    #f = float((pow(x,2))*exp(-x))
+    f = exp(x)
     return f
 #Aqui é onde acontece tudo, "a" e "b" são os intervalos definidos e "n" é o número de divisões
 def integral(a, b, n):
@@ -27,7 +32,7 @@ def integral(a, b, n):
     #"result" recebe a multiplicação de delta x com a soma de todos os pontos médios já aplicados na função
     result = dx*soma
     #Enfeites de impressão
-    #print("lista =", lista)
+    #print('lista =', lista)
     #print("soma =", soma)
-    print("resultado =", result)
-integral(0, 1000, 100000)
+    print('resultado =', result)
+integral(0, 2, 1000)
